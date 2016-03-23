@@ -31,6 +31,7 @@ var listChatty = (function() {
 		newLine.appendChild("removeInput");
 
 	}
+	
 
 
 }(Chatty));

@@ -1,16 +1,18 @@
 "use strict";
 
-function removeElement(gone) {
-    let element = document.getElementById(gone);
-    element.parentNode.removeChild(button);
+
+
+let Chatty = (function(removeChatty) {
+
+let acceptedMsg = document.querySelector("body").addEventListener("click", function(event) {
+  if (event.target.tagName === "button") {
+       function removeElement() {
+       let element = document.getElementById(gone);
+       element.parentNode.removeChild(button);
   }
+  return removeChatty;
+ }(Chatty));_
 
-}();
 
 
-// let acceptedMsg = document.querySelector("body").addEventListener("click", function(gone) {
-//   if (event.target.tagName.toLowerCase() === "button") {
-//     removeElement(""); 
-//     console.log();
-//   }
-// }();_
+ 

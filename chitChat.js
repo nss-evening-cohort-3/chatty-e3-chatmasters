@@ -11,7 +11,6 @@ var Chatty = (function(oldChatty) {
 		}
         var outputString = "";
 		for (var i = 0; i < userMessages.length; i++) {
-		var responses = userMessages[i];
 	        //Build up Dom string
 	        outputString += `<div>${userMessages[i]}<button id="gone">Delete</button></div>`;
     	};	
@@ -19,9 +18,7 @@ var Chatty = (function(oldChatty) {
 	}
 
 
-
-	function listUserInput() {
-		var emptyString = "";
+	oldChatty.listUserInput = function() {
 		var newLine = document.createElement("li");
 		var removeInput = document.createElement("button");
 		removeInput.textContent = "Remove Message";

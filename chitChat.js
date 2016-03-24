@@ -1,24 +1,23 @@
 "use strict"
 var Chatty = (function(oldChatty) {
-	var newMessage = document.getElementById("chatty");
-	var userInput = [];
+	var newMessage = document.getElementById("chatBox");
+	var userMessages = [];
 
-	oldChatty.myData = function(defaultText) {
+	oldChatty.myData = function(messages) {
+		console.log("one", messages)
+		for (var msg in messages) {
+			userMessages.push(messages[msg]);
+			console.log("userMessages", userMessages)
+		}
         var outputString = "";
-		for (var i = 0; i < userInput.length; i++) {
-		var responses = userInput[i];
+		for (var i = 0; i < userMessages.length; i++) {
+		var responses = userMessages[i];
 	        //Build up Dom string
-	        outputString += `<div>${responses.name}</div>`;
-	        outputString += `<div>${responses.quest}</div>`;
-	        outputString += `<div>${responses.color}</div>`;
-	        outputString += `<div>${responses.speed}</div>`;
-	        outputString += `<div>${responses.cake}</div>`;
-	        outputString += `<button id="gone">Delete</button>`;
-    	}	
+	        outputString += `<div>${userMessages[i]}<button id="gone">Delete</button></div>`;
+    	};	
       newMessage.innerHTML += outputString;
 	}
-	Chatty.myData();
-	// function listDefault(){}
+
 
 
 	function listUserInput() {

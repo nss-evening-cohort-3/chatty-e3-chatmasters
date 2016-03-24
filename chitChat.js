@@ -1,23 +1,25 @@
 "use strict"
-var listChatty = (function() {
-	var newMessage = document.getElementById("chatty")
+var Chatty = (function(oldChatty) {
+	var newMessage = document.getElementById("chatty");
 	var userInput = [];
-	
-	for (var i = 0; i < chatCall.length; i++) {
-          let newMessage = responses[i];
-        //Build up Dom string
-        outputString += `<div>${responses.Name}</div>`;
-        outputString += `<div>${responses.Quest}</div>`;
-        outputString += `<div>${responses.Quest}</div>`;
-        outputString += `<div>${responses.Color}</div>`;
-        outputString += `<div>${responses.Speed}</div>`;
-        outputString += `<div>${responses.Cake}</div>`;
-        outputString += `<button id="gone">Delete</button>`;
-         
-      }
+
+	oldChatty.myData = function(defaultText) {
+        var outputString = "";
+		for (var i = 0; i < userInput.length; i++) {
+		var responses = userInput[i];
+	        //Build up Dom string
+	        outputString += `<div>${responses.name}</div>`;
+	        outputString += `<div>${responses.quest}</div>`;
+	        outputString += `<div>${responses.color}</div>`;
+	        outputString += `<div>${responses.speed}</div>`;
+	        outputString += `<div>${responses.cake}</div>`;
+	        outputString += `<button id="gone">Delete</button>`;
+    	}	
       newMessage.innerHTML += outputString;
-		
-	};
+	}
+	Chatty.myData();
+	// function listDefault(){}
+
 
 	function listUserInput() {
 		var emptyString = "";
@@ -31,9 +33,9 @@ var listChatty = (function() {
 		newLine.appendChild("removeInput");
 
 	}
-	
 
 
+	return oldChatty;
 }(Chatty));
 
 

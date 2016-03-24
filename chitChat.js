@@ -1,6 +1,7 @@
 "use strict"
 var Chatty = (function(oldChatty) {
 	var newMessage = document.getElementById("chatBox");
+	var monkeybutt = document.getElementById("textBox")
 	var userMessages = [];
 
 	oldChatty.myData = function(messages) {
@@ -16,17 +17,21 @@ var Chatty = (function(oldChatty) {
 	}
 
 
-	oldChatty.listUserInput = function() {
-		var newLine = document.createElement("li");
-		var removeInput = document.createElement("button");
-		removeInput.textContent = "Remove Message";
-		var elementLabel = document.createElement("label");
-		elementLabel.textContent = document.getElementById("input").value
-		document.getElementById("addChats").appendChild("newLine");
-		newLine.appendChild("elementLabel");
-		newLine.appendChild("removeInput");
 
+
+
+	oldChatty.listUserInput = function() {
+		var newOutput = "";
+		for (var t = 0; t < userMessages.length; t++) {
+			newOutput += `<div>${userMessages[t]}<button id="gone">Delete</button></div>`;
+            newOutput += document.getElementById("textBox").value;
+            console.log(newOutput);
+		}
+		
 	}
+
+
+	monkeybutt.addEventListener("keypress", oldChatty.listUserInput);
 
 
 	return oldChatty;

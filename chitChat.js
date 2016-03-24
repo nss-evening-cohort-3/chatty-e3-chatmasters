@@ -1,26 +1,24 @@
 "use strict"
-var listChatty = (function() {
-	var newMessage = document.getElementById("chatty")
-	var userInput = [];
-	
-	for (var i = 0; i < chatCall.length; i++) {
-          let newMessage = responses[i];
-        //Build up Dom string
-        outputString += `<div>${responses.Name}</div>`;
-        outputString += `<div>${responses.Quest}</div>`;
-        outputString += `<div>${responses.Quest}</div>`;
-        outputString += `<div>${responses.Color}</div>`;
-        outputString += `<div>${responses.Speed}</div>`;
-        outputString += `<div>${responses.Cake}</div>`;
-        outputString += `<button id="gone">Delete</button>`;
-         
-      }
-      newMessage.innerHTML += outputString;
-		
-	};
+var Chatty = (function(oldChatty) {
+	var newMessage = document.getElementById("chatBox");
+	var userMessages = [];
 
-	function listUserInput() {
-		var emptyString = "";
+	oldChatty.myData = function(messages) {
+		console.log("one", messages)
+		for (var msg in messages) {
+			userMessages.push(messages[msg]);
+			console.log("userMessages", userMessages)
+		}
+        var outputString = "";
+		for (var i = 0; i < userMessages.length; i++) {
+	        //Build up Dom string
+	        outputString += `<div>${userMessages[i]}<button id="gone">Delete</button></div>`;
+    	};	
+      newMessage.innerHTML += outputString;
+	}
+
+
+	oldChatty.listUserInput = function() {
 		var newLine = document.createElement("li");
 		var removeInput = document.createElement("button");
 		removeInput.textContent = "Remove Message";
@@ -31,9 +29,9 @@ var listChatty = (function() {
 		newLine.appendChild("removeInput");
 
 	}
-	
 
 
+	return oldChatty;
 }(Chatty));
 
 

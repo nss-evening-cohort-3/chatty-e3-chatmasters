@@ -1,7 +1,11 @@
 "use strict";
 
 
+<<<<<<< HEAD
 let Chatty = (function(removeChatty) {
+=======
+let Chatty = function(original) {
+>>>>>>> master
 
 let acceptedMsg = document.querySelector("body").addEventListener("click", function(event) {
   if (event.target.tagName === "button") {
@@ -12,3 +16,7 @@ let acceptedMsg = document.querySelector("body").addEventListener("click", funct
   return removeChatty;
  }(Chatty);
 
+<<<<<<< HEAD
+=======
+}();
+>>>>>>> master

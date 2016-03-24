@@ -4,10 +4,8 @@ var Chatty = (function(oldChatty) {
 	var userMessages = [];
 
 	oldChatty.myData = function(messages) {
-		console.log("one", messages)
 		for (var msg in messages) {
 			userMessages.push(messages[msg]);
-			console.log("userMessages", userMessages)
 		}
         var outputString = "";
 		for (var i = 0; i < userMessages.length; i++) {

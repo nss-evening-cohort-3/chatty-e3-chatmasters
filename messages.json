@@ -1,11 +1,13 @@
 {
-	"responses": 
-	{
-	"name": "What is your name?",
-	"quest": "What is your quest?",
-	"color": "What is your favorite color?",
-	"speed": "What is the air-speed velocity of an unleaden swallow?",
-	"cake": "Cake or death?"
-	}
-	
+	"responses": [{
+		"message": "What is your name?"
+	}, {
+		"message": "What is your quest?"
+	}, {
+		"message": "What is your favorite color?"
+	}, {
+		"message": "What is the air-speed velocity of an unleaden swallow?"
+	}, {
+		"message": "Cake or death?"
+	}]
 }

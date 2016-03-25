@@ -6,13 +6,13 @@ var Chatty = (function(oldChatty) {
 	oldChatty.displayMessages = function() {
 		var buildString;
 		for(var i = 0; i < Chatty.getChat().length; i++) {
-			buildString = `<div><p>${Chatty.getChat()[i].message}</p></div>`;
-			buildString += `<button id="gone">Delete</button>`;
+			buildString = `<div><p>${Chatty.getChat()[i].message}</p>`;
+			buildString += `<button id="gone">Delete</button></div>`;
+			// buildString += `<button id="gone">Delete</button>`;
 			newMessage.innerHTML += buildString;
 		
 		}
-	}
-
+	} 
 
 	return oldChatty;
 }(Chatty));

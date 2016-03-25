@@ -2,6 +2,7 @@ var Chatty = (function() {
 	var chatCall = [];
 
 	return {
+		
 		getChat: function() {
 			return chatCall;
 		},

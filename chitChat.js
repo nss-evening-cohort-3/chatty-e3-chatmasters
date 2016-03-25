@@ -8,11 +8,14 @@ var Chatty = (function(oldChatty) {
 		return userMessages;
 	}
 
-
-	oldChatty.myData = function(messages) {
+	oldChatty.chatObj = function(messages) {
 		for (var msg in messages) {
 			userMessages.push(messages[msg]);
 		}
+	}
+
+	oldChatty.myData = function(messages) {
+		oldChatty.chatObj(messages);
     var outputString = "";
 		for (var i = 0; i < userMessages.length; i++) {
 	    //Build up Dom string

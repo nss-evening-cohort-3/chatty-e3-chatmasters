@@ -4,14 +4,14 @@ var Chatty = (function(msgChatty) {
   
   function msgDisplay() {
   	var msgGet = Chatty.getter();
-    var msgBase = input.values;
+    var msgBase = input.value;
     msgGet.push(msgBase);
     Chatty.myData(msgGet);
   }
 
 	input.addEventListener("keypress", function(event) {
-    if(event.keycode === 13) {
-    	msgDisplay();
+    if (event.keyCode === 13) {
+      msgDisplay();
     }
 	})
 

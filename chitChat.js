@@ -1,38 +1,18 @@
 "use strict"
 var Chatty = (function(oldChatty) {
 	var newMessage = document.getElementById("chatBox");
-	var monkeybutt = document.getElementById("textBox")
-	var userMessages = [];
-
-	oldChatty.myData = function(messages) {
-		for (var msg in messages) {
-			userMessages.push(messages[msg]);
-		}
-        var outputString = "";
-		for (var i = 0; i < userMessages.length; i++) {
-	        //Build up Dom string
-	        outputString += `<div>${userMessages[i]}<button id="gone">Delete</button></div>`;
-    	};	
-      newMessage.innerHTML += outputString;
-	}
 
 
-
-
-
-	oldChatty.listUserInput = function() {
-		var newOutput = "";
-		for (var t = 0; t < userMessages.length; t++) {
-			newOutput += `<div>${userMessages[t]}<button id="gone">Delete</button></div>`;
-            newOutput += document.getElementById("textBox").value;
-            console.log(newOutput);
-		}
+	oldChatty.displayMessages = function() {
+		var buildString;
+		for(var i = 0; i < Chatty.getChat().length; i++) {
+			buildString = `<div><p>${Chatty.getChat()[i].message}</p>`;
+			buildString += `<button id="gone">Delete</button></div>`;
+			// buildString += `<button id="gone">Delete</button>`;
+			newMessage.innerHTML += buildString;
 		
-	}
-
-
-	monkeybutt.addEventListener("keypress", oldChatty.listUserInput);
-
+		}
+	} 
 
 	return oldChatty;
 }(Chatty));

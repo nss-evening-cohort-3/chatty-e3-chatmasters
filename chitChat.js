@@ -13,8 +13,8 @@ var Chatty = (function(oldChatty) {
 			console.log("msg", Chatty.getChat()[i]);
 		}
 
-			
-      // newMessage.innerHTML += outputString;
+
+      //newMessage.innerHTML += outputString;
 	}
 
 
@@ -25,7 +25,7 @@ var Chatty = (function(oldChatty) {
             newOutput += document.getElementById("textBox").value;
             console.log(newOutput);
 		}
-		
+
 	}
 
 
@@ -43,4 +43,3 @@ var Chatty = (function(oldChatty) {
 // One IIFE should accept an element id, and the user message, and then add the user's message - along with the delete button - to the specified parent element. Each message should be stored in a private array in this IIFE. This IIFE should expose a function to read all messages, and delete a single message.
 
 // One IIFE should accept a message element id and then remove the correct element from the DOM. This IIFE should also remove the corresponding message from the private array that was created in the previous IIFE.
-
